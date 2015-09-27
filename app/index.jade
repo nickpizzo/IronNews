@@ -40,6 +40,41 @@ html.no-js
       
     
     .jumbotron
+      
+    
+    .footer
+      ul.nav
+        li
+          a(href='#') FAQ
+        li |
+        li
+          a(href='#') Support
+        li |
+            
+        li
+          a(href='#') API
+        li |
+            
+        li
+          a(href='#') Security
+        li |
+        
+        li
+          a(href='#') List
+        li |
+            
+        li
+          a(href='#') Bookmarklet
+        li |
+            
+        li
+          a(href='#') DMCA
+        li |
+            
+        li
+          a(href='#') Contact
+          
+    script(type="text/template" id="lineTemplate")
       .articleHead 
         .number 1
         .upvote test
@@ -49,42 +84,6 @@ html.no-js
         .submitter name
         .createdAt date
         .comments comments
-    
-    .footer
-      ul.nav
-        li
-          a(href='#') FAQ
-            | &nbsp; |
-        li
-          a(href='#') Support
-            | &nbsp; |
-        li
-          a(href='#') API
-            | &nbsp; |
-        li
-          a(href='#') Security
-            | &nbsp; |
-        li
-          a(href='#') List
-            | &nbsp; |
-        li
-          a(href='#') Bookmarklet
-            | &nbsp; |
-        li
-          a(href='#') DMCA
-            | &nbsp; |
-        li
-          a(href='#') Contact
-          
-    script(type="text/template" id="lineTemplate")
-      form(class="search")
-      input(type="search" name="name" value="{{ login }}")
-      nav
-        ul
-          li(class="profile")
-            a(href="#{{ login }}") Profile
-          li(class="repos")
-            a(href="#{{ login }}/repos") Repos
       
     // Google Analytics: change UA-XXXXX-X to be your site's ID.
     

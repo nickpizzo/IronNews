@@ -2,24 +2,22 @@ _.templateSettings = {
   interpolate: /\{\{(.+?)\}\}/g
 };
 
-var API_ROOT = 'https://iron-news.herokuapp.com/articles';
-
+const API_ROOT = 'https://iron-news.herokuapp.com/articles';
 
 var Article = Backbone.Model.extend({
-
   fetchArticleList: function() {
      $.get(API_ROOT, function(data) {
-        console.log(data); // for motivational purposes
-        return data; //i.e. return "articleList"
+        return data; //i.e. returns array of 25 objects
       });
   },
 
   createCompleteArticles: function() {
-    $.each(this.fetchArticleList(), function(i, list) {
-      $.post(API_ROOT, [list.title, list.url, list.submitter], function(data) {
-        console.log(data);
+    var arr = this.fetchArticleList();
+    for(i=0; i<arr.length; i++) {
+      $.post(API_ROOT, [arr[i].title, arr[i].url, arr[i].submitter], function() {
+        return data;  // doesn't work
       });
-    });
+    };
   },
 
   fetchCompleteArticles: function() {
@@ -31,33 +29,27 @@ var Article = Backbone.Model.extend({
   },
 
   postComment: function() {
-
+    //$.post(API_ROOT + article.id + '/comments',[article_id, name, email, message], function() {})
   },
 
   upvote: function() {
-
+    //$.post(API_ROOT/vote... makes no sense, can't specify article being upvoted)
   }
 });
 
 
-//our "initializer"
-var yourface = new Article().fetchArticleList();
+//our test "initializer"
+
+var yourface = new Article().createCompleteArticles();
 
 
 
+var ArticleCollection = Backbone.Collection.extend({
+  model: Article(),
+
+});
 
 
-
-
-
-// var ArticleCollection = Backbone.Collection.extend({
-//   // model: article;
-//   // url:
-//
-// });
-//
-//
-//
 var LineView = Backbone.View.extend({
   template: _.template($('#lineTemplate').text()),
 

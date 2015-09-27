@@ -25,17 +25,23 @@ body {
   padding-right: 15px;
 }
 
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: none;
+}
+
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
   background-color: #FF7200;
   border-radius: 5px;
 
+
   /* Make the masthead heading the same height as the navigation */
   h3 {
     margin-top: 0;
     margin-bottom: 0;
-    line-height: 42px;
+    line-height: 39px;
     padding-left: 5px;
     color: rgb(0, 0, 0);
     font-size: 15px;
@@ -62,6 +68,17 @@ body {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+  text-align: center;
+  ul li {
+    float: none;
+    display: inline-block;
+    a {
+      color: rgb(0, 0, 0);
+      padding: 3px;
+      font-size: 11px;
+
+    }
+  }
 }
 
 .container-narrow > hr {
